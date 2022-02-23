@@ -1,5 +1,12 @@
 # DietMeals
 
+COMP 631 Final Project
+
+Ben Harris (bbh3) & Angela Cao (abc7)
+
+DietMeals is a graphical search engine built on data collected from [allrecipes.com]. The relevant recipes are queried based on user restictions (diet, inclusion or exclusion of certain ingredients, ingredient substitutions, etc.). The queries and results will be accessible through a simple webapp.
+
+
 ## Installation
 
 `cd` to the root directory in the command line.
