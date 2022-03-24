@@ -28,3 +28,11 @@ When you are done, deactivate the environment: `deactivate`
     - `i` is the number of the sitemap (1 to 8) (defaults to 1)
     - `start` is the number of recipes to skip (defaults to 0)
     - `stop` is the number of recipes at which to end the run (defaults to MAX_INT)
+
+
+## Solr
+
+`./bin/solr start -c -p 8983 -s example/cloud/node1/solr`
+`bin/solr stop -all`
+
+
