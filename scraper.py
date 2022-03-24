@@ -38,9 +38,9 @@ for rec_url in rec_urls:
             if count % 1000 == 0:
                 print(data)
                 with open("recipes{i}_{count}.json".format(i=i,count=count), 'w') as outfile:
-                    json.dump(json.dumps(data), outfile)
+                    json.dump(data, outfile)
                 data = {'recipes':[]}
 
 print(data)
 with open("recipes{i}_{count}.json".format(i=i,count=count), 'w') as outfile:
-    json.dump(json.dumps(data), outfile)
+    json.dump(data, outfile)
