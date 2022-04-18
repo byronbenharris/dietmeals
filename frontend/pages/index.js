@@ -42,9 +42,9 @@ export default function Home() {
           </Form.Group>
 
           <Form.Group className={["mb-3", styles.form_input].join(" ")}>
-            <Form.Control type="input" placeholder="Custom Restrictions" />
+            <Form.Control type="input" placeholder="Custom Exclusions" />
             <Form.Text className="text-muted">
-              Enter commas between each restricted ingredient
+              Enter commas between each excluded ingredient
             </Form.Text>
           </Form.Group>
 
