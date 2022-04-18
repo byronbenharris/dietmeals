@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
@@ -7,6 +6,16 @@ import styles from '../styles/home.module.css'
 
 export default function Home() {
   const router = useRouter();
+
+  function handleSearch() {
+    router.push({
+      pathname: '/search',
+      query: { 
+        find: 'FIND',
+        ignore: 'IGNORE',
+      },
+    });
+  }
 
   return (
     <div className={styles.container}>
@@ -48,8 +57,12 @@ export default function Home() {
             </Form.Text>
           </Form.Group>
 
-          <Button variant="primary" className={styles.search_btn} type="button" onClick={() => router.push('/search')}>
-            Search
+          <Button 
+            type="button" 
+            variant="primary"
+            className={styles.search_btn} 
+            onClick={handleSearch}>
+              Search
           </Button>
         </Form>
       </main>
