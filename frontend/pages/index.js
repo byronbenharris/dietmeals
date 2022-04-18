@@ -51,7 +51,7 @@ export default function Home() {
           </Form.Group>
 
           <Form.Group className={["mb-3", styles.form_input].join(" ")}>
-            <Form.Control type="input" placeholder="Custom Exclusions" />
+            <Form.Control type="input" placeholder="Ingredients to Exclude" />
             <Form.Text className="text-muted">
               Enter commas between each excluded ingredient
             </Form.Text>
