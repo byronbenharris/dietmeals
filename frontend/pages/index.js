@@ -37,7 +37,8 @@ export default function Home() {
           <Form.Group className={["mb-3", styles.form_radios].join(" ")}>
             <Form.Check type="checkbox" label="Veg." />
             <Form.Check type="checkbox" label="Vegan" />
-            <Form.Check type="checkbox" label="Paleo" />
+            <Form.Check type="checkbox" label="Gluten-Free" />
+            <Form.Check type="checkbox" label="Lactose Intolerance" />
           </Form.Group>
 
           <Form.Group className={["mb-3", styles.form_input].join(" ")}>
