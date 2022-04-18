@@ -41,3 +41,7 @@
   display: block;
   margin: 0 auto;
 }
+
+.form_radios {
+  text-align: center;
+}

@@ -35,9 +35,9 @@ export default function Home() {
           </Form.Group>
 
           <Form.Group className={["mb-3", styles.form_radios].join(" ")}>
-            <Form.Check type="checkbox" label="Veg." />
-            <Form.Check type="checkbox" label="Vegan" />
-            <Form.Check type="checkbox" label="Paleo" />
+            <Form.Check type="checkbox" label="Veg." inline="true"/>
+            <Form.Check type="checkbox" label="Vegan" inline="true"/>
+            <Form.Check type="checkbox" label="Paleo" inline="true"/>
           </Form.Group>
 
           <Form.Group className={["mb-3", styles.form_input].join(" ")}>
