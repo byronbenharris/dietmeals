@@ -1,2 +1,4 @@
 env/
 solr/
+recipes2/
+!recipes.json
