@@ -40,8 +40,13 @@
 .search_btn {
   display: block;
   margin: 0 auto;
+  width: 100%;
 }
 
 .form_radios {
   text-align: center;
+}
+
+.calories {
+  width: 48%;
 }

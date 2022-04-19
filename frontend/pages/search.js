@@ -8,8 +8,8 @@ export default function Search() {
     <>
         <div>
           <h1>Search</h1>
-          <p>{query.find}</p>
-          <p>{query.ignore}</p>
+          <p>{query.query}</p>
+          <p>{query.restrict}</p>
         </div>
         <h2>
             <Link href="/">
