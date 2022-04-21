@@ -34,7 +34,7 @@ export default function Home() {
       pathname: '/search',
       query: { 
         query: query,
-        restrict: restrict,
+        restrict: restrict.replace(",", " "),
         // mincal: mincal,
         // maxcal: maxcal,
       },
@@ -104,7 +104,7 @@ export default function Home() {
               onChange = { (e) => setRestrict(e.target.value) }
             />
             <Form.Text className="text-muted">
-              Enter plus signs between each excluded ingredient
+              Enter commas between each excluded ingredient
             </Form.Text>
           </Form.Group>
 

@@ -1,5 +1,24 @@
 
+.results {
+    display: block;
+    margin: 0 auto;
+    
+    max-width: 750px;
+    text-align: center;    
+}
+
+.recipe {
+    padding: 25px;
+    margin: 25px 0px;
+    border-radius: 15px;
+    background-color: #f4f5f6;   
+}
+
 .borderCircle {
-    border: 1px #6c757d !important;
+    /* border: 2px solid #6c757d; */
     border-radius: 9999px;
+}
+
+.footer {
+    margin-bottom: 50px;
 }

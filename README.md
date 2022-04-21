@@ -32,7 +32,13 @@ When you are done, deactivate the environment: `deactivate`
 
 ## Solr
 
-`./bin/solr start -c -p 8983 -s example/cloud/node1/solr`
+http://laurenthinoul.com/how-to-enable-cors-in-solr/
+
+`bin/solr start -c -p 8983 -s example/cloud/node1/solr`
+`bin/solr start -c -p 7574 -s example/cloud/node2/solr -z localhost:9983`
+`bin/solr delete -c recipes`
+`bin/solr create -c recipes -s 2 -rf 2`
+`bin/post -c recipes ../recipes.json`
 `bin/solr stop -all`
 
 
