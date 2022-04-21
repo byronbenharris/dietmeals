@@ -1,41 +1,42 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
-import styles from '../styles/home.module.css'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import styles from '../styles/home.module.css';
 
 export default function Home() {
-  const router = useRouter();
 
+  const router = useRouter();
+  
   const [query, setQuery] = useState("");
-  const [vegetarian, setVegetarian] = useState(false);
-  const [vegan, setVegan] = useState(false);
-  const [gluten, setGluten] = useState(false);
-  const [lactose, setLactose] = useState(false);
   const [restrict, setRestrict] = useState("");
-  const [mincal, setMinCal] = useState(-1);
-  const [maxcal, setMaxCal] = useState(-1);
+  // const [vegetarian, setVegetarian] = useState(false);
+  // const [vegan, setVegan] = useState(false);
+  // const [gluten, setGluten] = useState(false);
+  // const [lactose, setLactose] = useState(false);
+  // const [mincal, setMinCal] = useState(-1);
+  // const [maxcal, setMaxCal] = useState(-1);
 
   function handleSearch() {
 
-    let restrictions = restrict;
-    if (vegetarian)
-      restrictions += "+vegetarian";
-    if (vegan)
-      restrictions += "+vegan";
-    if (gluten)
-      restrictions += "+gluten";
-    if (lactose)
-      restrictions += "+lactose";
+    // let restrictions = restrict;
+    // if (vegetarian)
+    //   restrictions += "+vegetarian";
+    // if (vegan)
+    //   restrictions += "+vegan";
+    // if (gluten)
+    //   restrictions += "+gluten";
+    // if (lactose)
+    //   restrictions += "+lactose";
 
     router.push({
       pathname: '/search',
       query: { 
         query: query,
-        restrict: restrictions,
-        mincal: mincal,
-        maxcal: maxcal,
+        restrict: restrict,
+        // mincal: mincal,
+        // maxcal: maxcal,
       },
     });
   }
@@ -44,7 +45,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>DietMeals</title>
-        <meta name="description" content="Find recipes that you can eat!" />
+        <meta name="description" content="Easily find healthy recipes!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -56,7 +57,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Find recipes that you can eat!
+          Easily find healthy recipes!
         </p>
 
         <Form className={styles.form}>
@@ -69,7 +70,7 @@ export default function Home() {
             />
           </Form.Group>
 
-          <Form.Group className={["mb-3", styles.form_radios].join(" ")}>
+          {/* <Form.Group className={["mb-3", styles.form_radios].join(" ")}>
             <Form.Check 
               type="checkbox" 
               label="Veg." 
@@ -94,7 +95,7 @@ export default function Home() {
               inline="true" 
               onChange = { (e) => setLactose(!lactose) }
             />
-          </Form.Group>
+          </Form.Group> */}
 
           <Form.Group className={["mb-3", styles.form_input].join(" ")}>
             <Form.Control 
@@ -103,11 +104,11 @@ export default function Home() {
               onChange = { (e) => setRestrict(e.target.value) }
             />
             <Form.Text className="text-muted">
-              Enter commas between each excluded ingredient
+              Enter plus signs between each excluded ingredient
             </Form.Text>
           </Form.Group>
 
-          <Form.Group className={["mb-3", styles.form_input].join(" ")}>
+          {/* <Form.Group className={["mb-3", styles.form_input].join(" ")}>
              <Form.Control 
               type="input" 
               placeholder="Minimum Calories"
@@ -120,7 +121,7 @@ export default function Home() {
               onChange = { (e) => setMaxCal(e.target.value) }
               className={styles.calories}
             />
-          </Form.Group>
+          </Form.Group> */}
 
           <Button 
             type="button" 
