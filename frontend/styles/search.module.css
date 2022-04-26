@@ -2,7 +2,6 @@
 .results {
     display: block;
     margin: 0 auto;
-    
     max-width: 750px;
     text-align: center;    
 }
@@ -21,4 +20,12 @@
 
 .footer {
     margin-bottom: 50px;
+}
+
+.recipe_title{
+    color:black;
+}
+
+.recipe_info {
+    color: #7b7f84;
 }

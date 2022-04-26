@@ -43,10 +43,6 @@
   width: 100%;
 }
 
-.form_radios {
-  text-align: center;
-}
-
-.calories {
-  width: 48%;
+.form_row {
+  width: 500px;
 }

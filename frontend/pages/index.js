@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import styles from '../styles/home.module.css';
 
 export default function Home() {
@@ -15,28 +17,28 @@ export default function Home() {
   // const [vegan, setVegan] = useState(false);
   // const [gluten, setGluten] = useState(false);
   // const [lactose, setLactose] = useState(false);
-  // const [mincal, setMinCal] = useState(-1);
-  // const [maxcal, setMaxCal] = useState(-1);
+  const [mincal, setMinCal] = useState(-1);
+  const [maxcal, setMaxCal] = useState(-1);
 
   function handleSearch() {
 
-    // let restrictions = restrict;
+    // let restrictions = restrict.replace(",", " ");
     // if (vegetarian)
-    //   restrictions += "+vegetarian";
+    //   restrictions += " vegetarian";
     // if (vegan)
-    //   restrictions += "+vegan";
+    //   restrictions += " vegan";
     // if (gluten)
-    //   restrictions += "+gluten";
+    //   restrictions += " gluten";
     // if (lactose)
-    //   restrictions += "+lactose";
+    //   restrictions += " lactose";
 
     router.push({
       pathname: '/search',
       query: { 
         query: query,
         restrict: restrict.replace(",", " "),
-        // mincal: mincal,
-        // maxcal: maxcal,
+        mincal: mincal,
+        maxcal: maxcal,
       },
     });
   }
@@ -62,74 +64,37 @@ export default function Home() {
 
         <Form className={styles.form}>
 
-          <Form.Group className={["mb-3", styles.form_input].join(" ")}>
-            <Form.Control 
-              type="input" 
-              placeholder="Search" 
-              onChange = { (e) => setQuery(e.target.value) }
-            />
-          </Form.Group>
+          <Row className={["mb-3", styles.form_row].join(" ")}>
+            <Form.Group>
+              <Form.Control type="input" placeholder="Search" onChange = { (e) => setQuery(e.target.value) }/>
+            </Form.Group>
+          </Row>
 
-          {/* <Form.Group className={["mb-3", styles.form_radios].join(" ")}>
-            <Form.Check 
-              type="checkbox" 
-              label="Veg." 
-              inline="true"
-              onChange = { (e) => setVegetarian(!vegetarian) }
-            />
-            <Form.Check 
-              type="checkbox" 
-              label="Vegan" 
-              inline="true"
-              onChange = { (e) => setVegan(!vegan) }
-            />
-            <Form.Check 
-              type="checkbox" 
-              label="Gluten-Free" 
-              inline="true" 
-              onChange = { (e) => setGluten(!gluten) }
-            />
-            <Form.Check 
-              type="checkbox" 
-              label="Lactose Intolerance" 
-              inline="true" 
-              onChange = { (e) => setLactose(!lactose) }
-            />
-          </Form.Group> */}
+          {/* <Row className={["mb-3", styles.form_row].join(" ")}>
+            <Form.Group>
+              <Form.Check type="checkbox" inline="true" label="Veg." onChange = { (e) => setVegetarian(!vegetarian) }/>
+              <Form.Check type="checkbox" inline="true" label="Vegan" onChange = { (e) => setVegan(!vegan) }/>
+              <Form.Check type="checkbox" inline="true" label="Gluten-Free" onChange = { (e) => setGluten(!gluten) }/>
+              <Form.Check type="checkbox" inline="true" label="Lactose Intolerance" onChange = { (e) => setLactose(!lactose) }/>
+            </Form.Group>
+          </Row> */}
 
-          <Form.Group className={["mb-3", styles.form_input].join(" ")}>
-            <Form.Control 
-              type="input" 
-              placeholder="Ingredients to Exclude"
-              onChange = { (e) => setRestrict(e.target.value) }
-            />
-            <Form.Text className="text-muted">
-              Enter commas between each excluded ingredient
-            </Form.Text>
-          </Form.Group>
+          <Row className={["mb-3", styles.form_row].join(" ")}>
+            <Form.Group>
+              <Form.Control type="input" placeholder="Ingredients to Exclude" onChange = { (e) => setRestrict(e.target.value) }/>
+            </Form.Group>
+          </Row>
 
-          {/* <Form.Group className={["mb-3", styles.form_input].join(" ")}>
-             <Form.Control 
-              type="input" 
-              placeholder="Minimum Calories"
-              onChange = { (e) => setMinCal(e.target.value) }
-              className={styles.calories}
-            />
-            <Form.Control 
-              type="input" 
-              placeholder="Maximum Calories"
-              onChange = { (e) => setMaxCal(e.target.value) }
-              className={styles.calories}
-            />
-          </Form.Group> */}
-
-          <Button 
-            type="button" 
-            variant="primary"
-            className={styles.search_btn} 
-            onClick={handleSearch}>
-              Search
-          </Button>
+          <Row className={["mb-3", styles.form_row].join(" ")}>
+            <Form.Group as={Col}>
+              <Form.Control type="input" className={styles.mincal} placeholder="Minimum Calories"onChange = { (e) => setMinCal(e.target.value) }/>
+            </Form.Group>
+            <Form.Group as={Col} >
+              <Form.Control type="input" className={styles.maxcal} placeholder="Maximum Calories" onChange = { (e) => setMaxCal(e.target.value) }/>
+            </Form.Group>
+          </Row>
+                      
+          <Button type="button" variant="primary" className={styles.search_btn} onClick={handleSearch}>Search</Button>
         </Form>
       </main>
     </div>
